@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  descript: MyText
+  finger_num: 1
+  file_name: MyString
+  data: 
+
+two:
+  title: MyString
+  descript: MyText
+  finger_num: 1
+  file_name: MyString
+  data: 

@@ -1,0 +1,56 @@
+<table id="columns">
+	<tr>
+		<td id="main">
+<% @user.password = @user.password_confirmation = nil %>
+
+
+
+<h2>注册指纹库</h2>
+<div>
+
+</div>
+
+
+    <% form_for :user, :url => users_path,:html=>{:class=>"signup"} do |f| -%>
+    
+    <p><%= label_tag 'login','用户名' %>
+    <%= f.text_field :login,:class=>"input_text" %>
+    				<span id="realname-hint">&nbsp;</span>
+    				<span class="hint">常用网名，可使用真实姓名</span>
+    </p><br>
+    
+    <p><%= label_tag 'email','电子邮件' %>
+    <%= f.text_field :email,:class=>"input_text"  %></p>
+    
+    
+    <p><%= label_tag 'password','密码' %>
+    <%= f.password_field :password,:class=>"input_text" %></p>
+    
+    <p><%= label_tag 'password_confirmation', '密码确认' %>
+    <%= f.password_field :password_confirmation,:class=>"input_text" %></p>
+    
+    
+    
+    <p class="act">
+
+    <%= submit_tag '注册',:class=>"signup-submit"  %>
+    </p>
+    
+    
+    <% end -%>
+
+		<div id="sign-bottom">
+			<p>已经有账号了？<br><a href="/login">登录指纹库</a></p>
+		</div>
+
+	
+</td>
+<td  id="main">
+<%t = {
+       'login'=>'用户名 ',
+       'email'=>'电子邮件 ',
+       'password'=>'密码 ',
+       'password_confirmation'=>'密码确认 '} %>
+<%= error_messages_for :user %>
+</td>
+</table>

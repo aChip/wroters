@@ -1,0 +1,19 @@
+<div id="map_canvas" style="width: 720px; height: 320px"></div>
+<p>
+  <b>用户名:</b>
+  <%=h @location.user.name %>
+</p>
+
+<p id="lat" value=<%=h @location.lat %>>
+</p>
+
+<p id="long" value=<%=h @location.long %>
+</p>
+
+<p>
+  <b>备注:</b>
+    <%=text_area :location,:memo,:style=>"width:640px;overflow-y:visible"  %>
+</p>
+ <%=render :partial => 'gmap'%>
+
+<%= link_to '返回', (url_for :back) %>

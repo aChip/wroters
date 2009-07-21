@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> CSS 代码格式化工具 </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+	a {color:blue; font-size:12px}
+	textarea {width:100%; height:300px; display:block; margin:10px 0; font-size:12px}
+	input {font-size:12px}
+  </style>
+  <script type="text/javascript">
+  <!--
+	function formatCSS(n){
+		var c = document.getElementById("abc");
+		var d = document.getElementById("def");
+		var v = c.value;
+		if (n==1){
+			d.value = v.replace(/\r\n/g,"").replace(/}/g,"}\r\n").replace(/\*\//g,"*/\r\n");
+		}
+		if (n==2){
+			d.value = v.replace(/\r\n/g,"").replace(/}/g,"}\r\n").replace(/\s*;\s*/g,";").replace(/;/g,";\r\n\t").replace(/{/g,"{\r\n\t").replace(/}/g,"\r\n}").replace(/\*\//g,"*/\r\n");
+		}
+		if (n==3){
+			c.value = d.value = "";
+		}
+	}
+  //-->
+  </script>
+ </head>
+
+ <body onload="document.getElementById('abc').focus()">
+ <h1>CSS 代码格式化工具</h1>
+<textarea id="abc" cols=150 rows=20 wrap="off" title="在这里输入CSS代码"></textarea>
+
+<input type="button" value=" 横排 " onclick="formatCSS(1)" />
+<input type="button" value=" 竖排 " onclick="formatCSS(2)" />
+<input type="button" value=" 清空 " onclick="formatCSS(3)" />
+
+<textarea id="def" cols=150 rows=20 wrap="off" title="这里将输出CSS代码"></textarea>
+
+<a href="http://www.happyshow.org" target="_blank">happyshow.org</a>
+ </body>
+</html>

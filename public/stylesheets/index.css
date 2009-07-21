@@ -1,0 +1,132 @@
+
+/*******************************************************************************
+********************************************************************************
+**
+* - CONTENT
+*
+* - SUBCONTENT
+**
+********************************************************************************
+ ******************************************************************************/
+
+
+
+
+/* CONTENT ------------------------------------------------------------------ */
+
+#contentMain .continuedLink
+{
+	font-size: 90%;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#summaries
+{
+	clear: both;
+	margin-top: 1.5em;
+	margin-bottom: -12px;
+	padding-top: 1.5em;
+	background-image: url(../images/dots.gif);
+	background-repeat: repeat-x;
+}
+
+* html #summaries
+{
+	margin-bottom: -1.5em;
+}
+
+#summaries h2
+{
+	font-size: 100%;
+}
+
+#summaries h2 a, #summaries h2 a:visited
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+#summaries h2 a:hover
+{
+	text-decoration: underline;
+}
+
+#summaries .date
+{
+	margin-top: 1em;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#summaries .commentCount
+{
+	margin-top: 1em;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#summaries .feature
+{
+	left: -3px;
+	padding: 8px;
+	background-image: url(../images/feature_frame_small.gif);
+}
+
+#summaries p
+{
+	margin-bottom: 12px;
+}
+
+* html #summaries p
+{
+	margin-bottom: 0;
+}
+
+#content .columns4
+{
+	min-height: 1px;
+	margin-top: 0.5em;
+	padding-bottom: 1.5em;
+	background-image: url(../images/dots.gif);
+	background-repeat: repeat-x;
+}
+
+* html #content .columns4
+{
+	height: 1px;
+}
+
+#content .columns4 h4
+{
+	margin-top: 0.75em;
+	margin-bottom: 0;
+}
+
+#content .columns4 p
+{
+	margin-top: 0;
+}
+
+
+
+
+/* SUBCONTENT --------------------------------------------------------------- */
+
+#contentSub h3
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 100%;
+}
+
+#contentSub li p
+{
+	margin-top: 0;
+}
+
+#contentSub .linkDate
+{
+	color: #999999;
+	font-size: 90%;
+}

@@ -1,0 +1,24 @@
+<table id="columns">
+	<tr>
+		<td id="main">
+      <h1>登录</h1>
+      
+      <% form_tag session_path,:class=>"signup" do -%>
+      <p><%= label_tag 'login',"用户名" %>
+      <%= text_field_tag 'login', @login,:class=>"input_text" %></p>
+      
+      <p><%= label_tag 'password', "密码" %>
+      <%= password_field_tag 'password', nil,:class=>"input_text"  %></p>
+      
+
+      <p><%= label_tag 'remember_me', '记住我',:class=>"label_check" %>
+      <%= check_box_tag 'remember_me', '1', @remember_me,:class=>"label_checkbox" %></p>
+
+      
+      <p class="act"><%= submit_tag '登录',:class=>"signup-submit"  %></p>
+      <% end -%>
+   </td>
+    <%if flash[:error]!=nil%>
+		  <td id="main"> <div id="errorExplanation"> <%= flash[:error] %> </div></td>
+    <%end%>
+</table>

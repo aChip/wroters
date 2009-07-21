@@ -1,0 +1,8 @@
+<div class="photo">
+<% fields_for "album[photo_attributes][]", photo do |p| %>
+  <p>
+    <%= p.file_field :data, :index => nil %>
+    <%= link_to_function "删除", "remove_field($(this), ('.photo'))" %>
+  </p>
+<% end %>
+</div>

@@ -1,0 +1,12 @@
+
+<%if @avatar%>
+  <%= lightbox_image_tag(@avatar.data.url(:thumb), @avatar.data.url(), {:class=>"thumb",:alt=>"提示",:title=>"提示"},
+    :cmd =>"")%>
+<%end%>
+
+<%if @user=current_user%>
+ <%= render :partial=>"form"%>
+<%end%>
+
+<%=link_to "用户位置", locations_path+"?user_id=#{@user.id}" %>
+<%=link_to "返回", locations_path %>

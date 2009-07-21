@@ -1,0 +1,36 @@
+<table id="columns">
+  <tr>
+    <td id="main">
+      <%if @dphoto==nil %>
+        没有找到匹配指纹
+      <%else%>
+        <p>指纹ID:<%=@match_id%></p>
+        <p>指纹相似度:<%=@sim%></p>
+     <table>
+    <tr>
+    <td>
+        原始指纹:
+        <br>
+        <% lightbox_image_tag(@sphoto.fingerdata.url(:thumb), @sphoto.fingerdata.url(), {:class=>"thumb",:alt=>"提示",:title=>"提示"},:cmd =>'') %>
+        <%=image_tag  @sphoto.fingerdata.url %>
+    </td>
+       <td>
+        匹配指纹:
+        <br>
+        <% lightbox_image_tag(@dphoto.fingerdata.url(:thumb), @dphoto.fingerdata.url(), {:class=>"thumb",:alt=>"提示",:title=>"提示"},:cmd =>'') %>
+        <%=link_to (image_tag  @dphoto.fingerdata.url),(url_for @user) %>
+
+
+      <%end%>
+       </td>
+
+
+      </table>
+        <%=link_to_remote "查看用户信息",:url=>(url_for @user),:update=>"user_info",:method=>"get"%>
+               <div id="user_info"></div>
+      <%=link_to "返回", (url_for :back) %>
+
+    </td>
+</table>
+
+

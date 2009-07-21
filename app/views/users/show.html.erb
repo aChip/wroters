@@ -1,0 +1,30 @@
+
+<%if @avatar%>
+  <%= lightbox_image_tag(@avatar.data.url(:thumb), @avatar.data.url(), {:class=>"thumb",:alt=>"提示",:title=>"提示"},
+    :cmd =>"")%>
+<%end%>
+
+ <p>
+    <b>用户名称</b>
+    <%= h  @user.name %>
+  </p>
+  <p>
+    <b>性别</b>
+    <%= h  @user.sex %>
+  </p>
+  <p>
+    <b>电话</b>
+    <%= h  @user.tel %>
+  </p>
+  <p>
+    <b>出生日期</b>
+    <%= h  @user.birth %>
+  </p>
+   <p>
+    <b>现住地址</b>
+    <%= h  @user.addr %>
+  </p>
+
+<%=link_to "用户位置", locations_path+"?user_id=#{@user.id}" %>
+<b>加上留言</b>
+<%=link_to "返回", (url_for :back) %>

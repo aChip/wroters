@@ -1,0 +1,44 @@
+
+
+<p>
+  <b>相册名称:</b>
+  <%=h @album.name %>
+</p>
+
+<p>
+  <b>相册描述:</b>
+  <%=h @album.description %>
+</p>
+<table>
+
+<% for photo in @album.photos %>
+  <%pid="photo"+photo.id.to_s%>
+<td>  
+  <div id=<%="#{pid}"%>>
+    <%= lightbox_image_tag(photo.data.url(:thumb), photo.data.url(), {:class=>"thumb",:alt=>"提示",:title=>"提示"}) %>
+
+</td>
+<td>
+    <%=link_to "设为头像",:controller=>"users", :action=>"set_avatar",:id=>photo.id,:method=>"put"%>
+    <%=link_to_remote '<image src="/images/delete.gif" />删除',:url=> photo_path(photo),
+        :confirm=>"确定要删除#{pid}吗？",
+        :complete => "Element.fade(#{pid});",
+        :method => :delete%>
+  </div>
+</td>
+<tr>
+<% end %>
+</table>
+
+
+<td id= "sidebar">
+  <% form_for @album, :html => { :multipart => true} do |f| %>
+    <%= render :partial => 'form', :locals => {:f => f} %>
+    <p><%= f.submit "更新",:class=>"formbutton" %></p>
+  <% end %>
+
+
+
+  <%= link_to '返回', albums_path %>
+
+</td>

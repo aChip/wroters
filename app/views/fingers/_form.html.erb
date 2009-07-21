@@ -1,0 +1,32 @@
+
+
+
+<% form_for :finger, :html => { :multipart => true } do |f| %>
+  <%= f.label :fingerdata,"文件" %><br />
+  <%= f.file_field :fingerdata %><br />
+
+  <%= f.label :title,"指纹名称" %><br />
+  <%= f.text_field :title %><br />
+
+  <%= f.label :description,"指纹描述" %><br />
+  <%= f.text_field :description  %><br />
+
+  <%= f.label :description,"指头" %><br />
+  <%= f.select :finger_num,[
+    ['左手拇指',1],
+    ['左手食指',2],
+    ['左手中指',3],
+    ['左手无名指',4],
+    ['左手小指',5],
+    ['-------',0],
+    ['右手拇指',6],
+    ['右手食指',7],
+    ['右手中指',8],
+    ['右手无名指',9],
+    ['右手小指',10]]
+
+  %>
+
+  <p><%= f.submit "上传",:class=>"formbutton" %></p>
+<% end %>
+

@@ -1,0 +1,32 @@
+<h1>编辑指纹</h1>
+    <%= lightbox_image_tag(@finger.fingerdata.url(:thumb), @finger.fingerdata.url(), {:class=>"thumb",:alt=>"提示",:title=>"提示"}) %>
+
+<% form_for (@finger) do |f| %>
+
+
+  <%= f.label :title,"指纹名称" %><br />
+  <%= f.text_field :title %><br />
+
+    <%= f.label :description,"指头" %><br />
+  <%= f.select :finger_num,[
+    ['左手拇指',1],
+    ['左手食指',2],
+    ['左手中指',3],
+    ['左手无名指',4],
+    ['左手小指',5],
+    ['-------',0],
+    ['右手拇指',6],
+    ['右手食指',7],
+    ['右手中指',8],
+    ['右手无名指',9],
+    ['右手小指',10]]
+
+  %>
+  <br />
+  <%= f.label :description,"指纹描述" %><br />
+  <%= f.text_field :description  %><br />
+  <p><%= f.submit "更新",:class=>"formbutton" %></p>
+<% end %>
+
+
+<%= link_to '返回', fingers_path %>

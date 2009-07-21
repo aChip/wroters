@@ -1,0 +1,14 @@
+<h1>显示位置</h1>
+
+<table>
+
+
+<% @locations.each do |location| %>
+  <tr>
+    <td><%=h location.memo %></td>
+    <td> <%= link_to '显示', location %></td>
+  </tr>
+<% end %>
+</table>
+
+<script type="text/javascript"> function initialize() {}</script>

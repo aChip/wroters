@@ -1,0 +1,26 @@
+    <div id="container" class="newlook">
+      <div id="header">
+        <h1><a href="http://www.zhiwenku.com/"><img src="/images/logo.png" alt="指纹库" /><span>首页</span></a></h1>
+        <div id="navigation" class="ui-roundedbox"><div class="ui-roundedbox-corner ui-roundedbox-tl"><div class="ui-roundedbox-corner ui-roundedbox-tr"><div class="ui-roundedbox-corner ui-roundedbox-bl"><div class="ui-roundedbox-corner ui-roundedbox-br"><div class="ui-roundedbox-content">
+                    <ul>
+                      <li><a href="/">首页</a></li>
+                      <li><a href="/search">搜索</a></li>
+                      <li>&nbsp&nbsp&nbsp</li>
+                      <% if logged_in? -%>
+                        <li><%= link_to "用户信息管理", edit_user_path(current_user), { :title => "指纹管理" }    %></li>
+                        <li><%= link_to "指纹管理", fingers_path, { :title => "指纹管理" }    %></li>
+                        <li><%= link_to "相册管理", albums_path, { :title => "相册管理" }    %></li>
+                        <li><%= link_to "地址管理", locations_path, { :title => "地址管理" }    %></li>
+
+                        <li><%= link_to_current_user :content_method => :login %></li>
+                        <li>(<%= link_to "退出", logout_path, { :title => "退出" }    %>)</li>
+
+                      <% else -%>
+                        <li><%= link_to "登录",  login_path,  { :title => "登录" } %> /
+                        <%= link_to "注册", signup_path, { :title => "创建新帐号" } %></li>
+                      <% end -%>
+
+
+                    </ul>
+                  </div></div></div></div></div></div>
+      </div>

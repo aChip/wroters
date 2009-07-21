@@ -1,0 +1,12 @@
+            <div id="map_canvas" style="width: 720px; height: 320px"></div>
+  <p>
+    <%= f.hidden_field :lat,:id=>"lat" %>
+  </p>
+  <p>
+    <%= f.hidden_field :long,:id=>"long" %>
+  </p>
+  <p>
+    <%= f.label :memo,"注释" %><br />
+    <%= f.text_area :memo,:style=>"width:640px;overflow-y:visible" %>
+  </p>
+

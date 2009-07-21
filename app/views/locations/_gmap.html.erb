@@ -1,0 +1,48 @@
+<script type="text/javascript">
+
+  function initialize() {
+
+    var map = new GMap2(document.getElementById("map_canvas"));
+
+    if (document.getElementById("long").value!=""){
+      var lat = document.getElementById("lat").value;
+      var lng = document.getElementById("long").value;
+      var center = new GLatLng(lat, lng);
+      var zoom = 13;
+    } else{
+      var center = new GLatLng(39.9493, 116.3975);
+      var zoom = 5;
+    }
+
+    map.setCenter(center, zoom);
+    map.enableScrollWheelZoom();
+    map.addControl(new GLargeMapControl());
+    map.addControl(new GMapTypeControl());
+    map.addControl(new google.maps.LocalSearch(), new GControlPosition(G_ANCHOR_TOP_RIGHT, new GSize(8,30)));
+
+    if (document.getElementById("update")!=null){
+      var marker = new GMarker(center, {draggable: true});
+      GEvent.addListener(marker, "dragend", function() {
+        // marker.openInfoWindowHtml("弹起来了...");
+        point = marker.getPoint();
+        document.getElementById("lat").value = point.lat();
+        document.getElementById("long").value = point.lng();
+      });
+
+      GEvent.addListener(map,'click',function(map,point) {
+        marker.setPoint(point);
+        document.getElementById("lat").value = point.lat();
+        document.getElementById("long").value = point.lng();
+      });
+    } else{
+      var marker = new GMarker(center, {draggable: false});
+
+
+    }
+    GEvent.addListener(marker,'click',function(){
+
+    });
+    map.addOverlay(marker);
+  }
+
+</script>

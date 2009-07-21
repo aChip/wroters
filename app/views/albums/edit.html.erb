@@ -1,0 +1,11 @@
+<h1>编辑指纹</h1>
+
+ 
+<% form_for @album, :html => { :multipart => true } do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <p><%= f.submit "更新" ,:class=>"formbutton"%></p>
+<% end %>
+ 
+<%= link_to '显示', @album %> |
+<%= link_to '返回', albums_path %>
+

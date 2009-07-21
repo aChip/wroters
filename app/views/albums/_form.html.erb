@@ -1,0 +1,19 @@
+
+<%= f.error_messages %>
+ 
+<p>
+  <%= f.label :name,"相册名称" %><br />
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :description,"描述" %><br />
+  <%= f.text_area :description,:rows=>"5"  %>
+</p>
+
+<div id="photos">
+
+</div>
+ 
+<%= link_to_function "添加照片" do |page|
+  page.insert_html :bottom, :photos, :partial => 'photo', :object => Photo.new
+end %>

@@ -1,0 +1,27 @@
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+  
+ <p>
+    <%= f.label :name,"用户名称" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :sex,"性别" %><br />
+    <%= f.select :sex,[['男',0],['女',1]] %>
+  </p>
+  <p>
+    <%= f.label :tel,"电话" %><br />
+    <%= f.text_field :tel %>
+  </p>
+  <p>
+    <%= f.label :birth,"出生日期" %><br />
+    <%= f.date_select :birth %>
+  </p>
+   <p>
+    <%= f.label :addr,"现住地址" %><br />
+    <%= f.text_field :addr %>
+  </p>
+  <p>
+    <%= f.submit '更新',:class=>"formbutton" %>
+  </p>
+<%end%>

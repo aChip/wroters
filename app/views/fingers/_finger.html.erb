@@ -1,0 +1,8 @@
+<div class="finger">
+<% fields_for "user[finger_attributes][]", finger do |p| %>
+  <p>
+    <%= p.file_field :data, :index => nil %>
+    <%= link_to_function "删除", "remove_field($(this), ('.finger'))" %>
+  </p>
+<% end %>
+</div>

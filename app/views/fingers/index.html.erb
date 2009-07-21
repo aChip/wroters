@@ -1,0 +1,31 @@
+<h2>指纹列表</h2>
+  <% @fingers.each do |finger| %>
+  <%pid="finger"+finger.id.to_s%>
+  <div id=<%="#{pid}"%>>
+    <%= lightbox_image_tag(finger.fingerdata.url(:thumb), finger.fingerdata.url(), {:class=>"thumb",:alt=>"提示",:title=>"提示"}) %>
+
+    <%if finger.status == nil %>
+      <%=link_to "加入指纹库",:controller=>"fingers", :action=>"inlib",:id=>finger.id %>
+    <%else%>
+      <%=link_to "退出指纹库",:controller=>"fingers", :action=>"outlib",:id=>finger.id %>
+    <%end%>
+    <%if finger.status == 1 %>
+      <%=link_to "匹配指纹",:controller=>"finder", :action=>"index",:id=>finger.id %>
+    <%end%>
+
+    <%= link_to '编辑', edit_finger_path(finger) %>
+    <%= link_to '删除', finger, :confirm => '确认删除吗?', :method => :delete %>
+<% end %>
+ </div>
+
+
+
+
+
+  
+
+  <td id= "sidebar">
+    <%= render :partial => 'form' %>
+  </td>
+
+

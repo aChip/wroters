@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  lat: 1.5
+  long: 1.5
+  memo: MyString
+
+two:
+  user_id: 1
+  lat: 1.5
+  long: 1.5
+  memo: MyString
